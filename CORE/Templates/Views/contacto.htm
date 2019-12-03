@@ -1,0 +1,75 @@
+{% extends 'Complements/head.htm' %}
+
+{% block body %}
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <br>
+                        <h2 class="text-center" style="font-family: fantasy">Contactanos Para Mas Información</h2>
+                        <hr style="background-color: black">
+                        <!-- Nombre -->
+                        <div class="form-group">
+                            <label for="Nombre">Nombre:</label><br>
+                            <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="Ingrese su nombre">
+                        </div>
+                        <!-- Correo Electronico -->
+                        <div class="form-group">
+                            <label for="Correo">Correo Electronico:</label><br>
+                            <input type="text" name="txtCorreo" id="txtCorreo" class="form-control" placeholder="Ingrese su correo">
+                        </div>
+                        <div class="form-group">
+                            <label for="Mensaje">Mensaje:</label><br>
+                            <textarea type="text" name="txtMensaje" id="txtMensaje" rows="4" class="form-control"
+                                placeholder="Ingrese un mensaje"></textarea>
+                        </div>
+                        <!-- Boton Ingresar Contacto -->
+                        <br>
+                        <div class="form-group" method="POST">
+                            <input type="submit" name="btnEnviar" class="btn btn-warning btn-md" value="Enviar mensaje">
+                        </div>
+                        <div>
+                            <center>
+                                <img style="width: 50%"  src="../../static/img/Logo/FreshAir.png">
+                            </center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-footer">
+    <div class="logo-footer">
+        <img src="../../static/img/Logo/FreshAir.PNG" alt="">
+    </div>
+    <div class="programacion">
+        <h1>SERVICIOS </h1>
+        <ul>
+            <li>Términos y condiciones</li>
+            <li>Cambios y devoluciones</li>
+            <li>Seguimiento de mi orden</li>
+        </ul>
+    </div>
+    <div class="sobre-nosotros">
+        <h1>SOBRE NOSOTROS</h1>
+        <ul>
+            <li>Nuestra empresa</li>
+            <li>Trabaja con nosotros</li>
+            <li>Proveedores</li>
+        </ul>
+    </div>
+    <div class="contacto">
+        <h1>CONTACTO</h1>
+        <ul>
+            <li>Telefono: +569 7671 5827</li>
+            <li>Mail: Freshair@gmail.com </li>
+            <li>Contactenos</li>
+        </ul>
+    </div>
+</div>
+{% endblock body %}

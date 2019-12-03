@@ -1,0 +1,4 @@
+pip install python-social-auth 
+pip install social-auth-app-django
+pip install django-pwa
+pip install djangorestframework

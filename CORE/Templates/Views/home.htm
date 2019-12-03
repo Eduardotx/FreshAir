@@ -1,0 +1,78 @@
+{% extends 'COMPLEMENTS/head.htm' %}
+
+{% load static %}
+{% block head %}
+
+{% endblock head %}
+
+{% block body %}
+{% csrf_token %}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background-color: black">
+            <center>
+                <img class="img-fluid" src="../../static/img/Carousel/aire1.jpg">
+            </center>
+        </div>
+        <div class="carousel-item" style="background-color: black">
+            <center>
+                <img class="img-fluid" src="../../static/img/Carousel/aire3.jpg">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+</div>
+<br>
+<div class="container">
+    <center>
+        <img class="img-fluid" style="width: 20%" src="../../static/img/Logo/FreshAir.png" alt="">
+    </center>
+</div>
+<br>
+<div class="text-center container">
+    <div class="card-body">
+        <h5 class="card-title" style="font-family: fantasy">Descripción Empresa</h5>
+        <p class="card-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+            En Servicio FreshAir, cuenta con más de 15 años al servicio de nuestros clientes, 
+            brindando soluciones a sus necesidades y entregando nuestros servicios de reparaciones, 
+            instalaciones y mantenimiento a sus aires acondicionados.
+        </p>
+        <img class="img-fluid" src="../../static/img/Home/Reparacion.jpg" alt="">
+    </div>
+</div>
+
+<div class="container-footer">
+    <div class="logo-footer">
+        <img src="../../static/img/Logo/FreshAir.PNG" alt="">
+    </div>
+    <div class="programacion">
+        <h1>SERVICIOS </h1>
+        <ul>
+            <li>Términos y condiciones</li>
+            <li>Cambios y devoluciones</li>
+            <li>Seguimiento de mi orden</li>
+        </ul>
+    </div>
+    <div class="sobre-nosotros">
+        <h1>SOBRE NOSOTROS</h1>
+        <ul>
+            <li>Nuestra empresa</li>
+            <li>Trabaja con nosotros</li>
+            <li>Proveedores</li>
+        </ul>
+    </div>
+    <div class="contacto">
+        <h1>CONTACTO</h1>
+        <ul>
+            <li>Telefono: +569 7671 5827</li>
+            <li>Mail: Freshair@gmail.com </li>
+            <li>Contactenos</li>
+        </ul>
+    </div>
+</div>
+
+{% endblock body %}

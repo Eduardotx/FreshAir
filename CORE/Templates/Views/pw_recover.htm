@@ -1,0 +1,73 @@
+{% extends 'Complements/head.htm' %}
+
+{% block body %}
+<div id="login">
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" method="POST" autocomplete="off">
+                        {% csrf_token %}
+                        <br>
+                        <h3 class="text-center" style="font-family: fantasy">Recuperar contraseña</h3>
+                        <hr style="background-color: black">
+                        {% if resp == False %}
+                        <h4 class="text-center text-warning">Usuario o nombre incorrecto!</h4>
+                        {% endif %}
+                        {% if resp == True %}
+                        <h4 class="text-center text-success">Se envió un correo a {{correo}}</h4>
+                        {% endif %}
+                        <!--Username -->
+                        <div class="form-group">
+                            <label for="Usuario">Ingrese su nombre de usuario</label><br>
+                            <input type="text" name="txtUsuario" id="txtUsuario" class="form-control" placeholder="Ingrese usuario">
+                        </div>
+                        <!--Username -->
+                        <div class="form-group">
+                            <label for="Usuario">Ingrese su nombre con el que se registro</label><br>
+                            <input type="text" name="txtName" id="txtUsuario" class="form-control" placeholder="Confirmaremos su nombre">
+                        </div>
+                        <!-- Botones -->
+                        <div class="form-group" method="POST">
+                            <input type="submit" name="btnRecovery" class="btn btn-warning btn-md" value="Recuperar">
+                        </div>
+                    </form>
+                    <div class="container">
+                        <img class="img-fluid" src="../../static/img/Logo/FreshAir.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-footer">
+    <div class="logo-footer">
+        <img src="../../static/img/Logo/FreshAir.PNG" alt="">
+    </div>
+    <div class="programacion">
+        <h1>SERVICIOS </h1>
+        <ul>
+            <li>Términos y condiciones</li>
+            <li>Cambios y devoluciones</li>
+            <li>Seguimiento de mi orden</li>
+        </ul>
+    </div>
+    <div class="sobre-nosotros">
+        <h1>SOBRE NOSOTROS</h1>
+        <ul>
+            <li>Nuestra empresa</li>
+            <li>Trabaja con nosotros</li>
+            <li>Proveedores</li>
+        </ul>
+    </div>
+    <div class="contacto">
+        <h1>CONTACTO</h1>
+        <ul>
+            <li>Telefono: +569 7671 5827</li>
+            <li>Mail: Freshair@gmail.com </li>
+            <li>Contactenos</li>
+        </ul>
+    </div>
+</div>
+{% endblock body %}

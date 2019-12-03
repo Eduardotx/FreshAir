@@ -1,0 +1,77 @@
+{% extends 'Complements/head.htm' %}
+{% block body %}
+<div class="container">
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <center>
+            <br>
+            <h1 style="font-family: fantasy">Lista de <span class="text-warning">{{user}}</span></h1>
+            <hr style="background-color: black">
+            <table class="table">
+                <thead class="thead-dark">
+                    <h4 style="text-align: left; font-family: fantasy">Lista <span class="text-warning">{{list_name}}</span></h4>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre producto</th>
+                        <th scope="col">Tienda</th>
+                        <th scope="col">Precio producto</th>
+                        <th scope="col">Costo presupuestado</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in productos %}
+                    <tr>
+                        <th scope="row">{{p.prod_id}}</th>
+                        <th scope="row">{{p.prod_name}}</th>
+                        <td scope="row">{{p.store_id}}</td>
+                        <td scope="row">{{p.real_cost}}</td>
+                        <td scope="row">{{p.pre_cost}}</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a class="btn btn-warning btn-lg" href="{% url 'productos'%}">Agregar producto</a>
+        </center>
+    </form>
+    <br>
+    <div class="container">
+        <center>
+            <img class="img-fluid" style="width: 30%" src="../../static/img/Logo/FreshAir.png">
+        </center>
+    </div>
+</div>
+
+<div class="container-footer">
+    <div class="logo-footer">
+        <img src="../../static/img/Logo/FreshAir.PNG" alt="">
+    </div>
+    <div class="programacion">
+        <h1>SERVICIOS </h1>
+        <ul>
+            <li>Términos y condiciones</li>
+            <li>Cambios y devoluciones</li>
+            <li>Seguimiento de mi orden</li>
+        </ul>
+    </div>
+    <div class="sobre-nosotros">
+        <h1>SOBRE NOSOTROS</h1>
+        <ul>
+            <li>Nuestra empresa</li>
+            <li>Trabaja con nosotros</li>
+            <li>Proveedores</li>
+        </ul>
+    </div>
+    <div class="contacto">
+        <h1>CONTACTO</h1>
+        <ul>
+            <li>Telefono: +569 7671 5827</li>
+            <li>Mail: Freshair@gmail.com </li>
+            <li>Contactenos</li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock body%}
